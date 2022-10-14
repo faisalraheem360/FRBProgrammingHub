@@ -1,0 +1,41 @@
+﻿@model EntityFrameWorkWithSQLServerConnected.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="color: red; background-color:antiquewhite; text-align: center;">Employee Details</h1>
+
+
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Salery)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Salery)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id"class="btn btn-primary"style="border-radius:15px;">Update Data</a> 
+    <a asp-action="Index"class="btn btn-outline-success"style="border-radius:15px;">Back to List</a>
+</div>

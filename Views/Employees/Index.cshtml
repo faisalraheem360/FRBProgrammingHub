@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EntityFrameWorkWithSQLServerConnected.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 style="color:Red; background-color:antiquewhite; text-align:center; ">Employe Data Information</h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salery)
+            </th>
+            <th class="float-md-right"> <a asp-action="Create" class="btn btn-outline-success "style="border-radius:15px;">Add New Employee</a></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salery)
+            </td>
+            
+            <td class="float-md-right">
+               
+                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary"style="border-radius:15px;">Update Data</a> 
+                    <a asp-action="Details" asp-route-id="@item.id" class="btn btn-primary"style="border-radius:15px;">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger"style="border-radius:15px;">Delete</a>
+               
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
